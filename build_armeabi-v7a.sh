@@ -5,7 +5,7 @@ CROSS_PREFIX=$TOOLCHAIN/bin/arm-linux-androideabi-
 rm -f $(pwd)/compat/strtod.o
 function build_one
 {
-./configure --prefix=$PREFIX --enable-shared --disable-static --enable-protocol=file --enable-pic --enable-small --disable-programs --disable-doc --disable-symver --target-os=android --enable-cross-compile --cross-prefix=$CROSS_PREFIX --extra-cflags="-Os -fpic $ADDI_CFLAGS" --extra-ldflags="$ADDI_LDFLAGS" --sysroot=$TOOLCHAIN/sysroot $ADDITIONAL_CONFIG_FLAG
+./configure --prefix=$PREFIX --enable-shared --disable-static --enable-gpl --enable-avresample --enable-protocol=file --enable-pic --enable-small --disable-programs --disable-doc --disable-symver --target-os=android --enable-cross-compile --cross-prefix=$CROSS_PREFIX --extra-cflags="-Os -fpic $ADDI_CFLAGS" --extra-ldflags="$ADDI_LDFLAGS" --sysroot=$TOOLCHAIN/sysroot $ADDITIONAL_CONFIG_FLAG
 make clean
 make -j2
 make install
